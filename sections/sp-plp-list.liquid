@@ -1,0 +1,18 @@
+<ul>
+  {%- for product in collection.products -%}
+  <li>
+    {% render 'sp-plp-card',
+      product: product,
+    %}
+  </li>
+  {%- endfor -%}
+</ul>
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>

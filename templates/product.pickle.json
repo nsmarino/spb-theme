@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "sp-pickle-product"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

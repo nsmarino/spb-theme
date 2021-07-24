@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "sp-book-product"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

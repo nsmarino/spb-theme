@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "sp-giftcard-product"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

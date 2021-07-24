@@ -1,0 +1,25 @@
+<nav class="plp-header">
+  <section>
+    <a href="{{ canonical_url }}/best-selling"><button>Popular</button></a>
+    <a href="{{ canonical_url }}/created-descending"><button>New Arrivals</button></a>
+    <a href="{{ canonical_url }}/price-ascending"><button>Price: Low to High</button></a>
+    <a href="{{ canonical_url }}/price-descending"><button>Price: High to Low</button></a>
+  </section>
+  <section>
+    <a href="{{ shop.url }}/collections/all"><button>All</button></a>
+    <a href="{{ shop.url }}/collections/used"><button>Used Books</button></a>
+    <a href="{{ shop.url }}/collections/rare"><button>Rare Books</button></a>
+    <a href="{{ shop.url }}/collections/merch"><button>Merch</button></a>
+    <a href="{{ shop.url }}/collections/pickles"><button>Pickles</button></a>
+  </section>
+</nav>
+<style>
+  .plp-header button {
+    color: #069648;
+    font-family: monospace;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  } 
+</style>

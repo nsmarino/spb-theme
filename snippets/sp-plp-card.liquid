@@ -1,0 +1,35 @@
+<a href="{{ product.url }}">
+<div class="wrapper">
+    <img src="{{ product.featured_media | image_url }}" alt="{{ product.title }}">
+    <p>{{ product.title }}</p>
+    <p>
+      {%- if product.metafields.custom_fields.subtitle -%}
+      {{ product.metafields.custom_fields.subtitle }}
+      {%- else -%}
+      Sweet Pickle Books
+      {%- endif -%}
+    </p>
+    <p>{{product.price | money }}</p>
+</div>
+</a>
+<style>
+  a {
+    text-decoration: none;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    width: 300px;
+    background-color: #F4F4F4;
+    border-radius: 23px;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    color: #018136;
+    font-family: serif;
+    text-decoration: none;
+  }
+</style>

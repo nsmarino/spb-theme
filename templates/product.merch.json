@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "sp-merch-product"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
