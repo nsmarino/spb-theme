@@ -1,5 +1,7 @@
-<header>
-  <a href="/">Sweet Pickle Books</a>
+{{ 'sp-shop-header.css' | asset_url | stylesheet_tag }}
+
+<header class="shop-header">
+  <a href="/"><img src='https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455' alt="Sweet Pickle Books"></a>
   <a href="/pages/about">About</a>
   <a href="/collections/all">Shop</a>
   <a href="/pages/contact">Request a Book</a>
@@ -8,13 +10,9 @@
   <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
     <div class="field">
       <input class="search__input field__input" id="Search-In-Modal" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.search' | t }}">
-      <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
       <input type="hidden" name="options[prefix]" value="last">
-      <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-        <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
-          <use href="#icon-search">
-        </svg>
-      </button>
+      <button class="search__button field__button" aria-label="search">s</button>
     </div>
-  </form>  <a href="/cart">Cart</a>
+  </form>  
+  <a href="/cart">Cart</a>
 </header>

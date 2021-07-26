@@ -1,9 +1,13 @@
-<header>
-  <a href="/">Sweet Pickle Books</a>
-  <p>47 Orchard Street New York NY 10002</p>
-  <a href="/pages/about">About</a>
-  <a href="/collections/books">Shop Book</a>
-  <a href="/collections/merch">Shop Merch</a>
-  <a href="/pages/contact">Book Request</a>
-  <a href="/cart">Cart</a>
+{{ 'sp-pages-header.css' | asset_url | stylesheet_tag }}
+
+<header class="pagesHeader">
+  <a href="/"><img src='https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455' alt="Sweet Pickle Books"></a>
+  <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sp-address.svg?v=1627328811" alt="Address: 47 Orchard Street New York NY 10002">
+  
+  <a href="/pages/about" class="linkBtn"><span class="serifLabel">About</span></a>
+  <a href="/collections/books" class="linkBtn"><span class="sansLabel">Shop</span><span class="serifLabel">Book</span></a>
+  <a href="/collections/merch" class="linkBtn"><span class="sansLabel">Shop</span><span class="serifLabel">Merch</span></a>
+  <a href="/pages/contact" class="linkBtn"><span class="sansLabel">Book</span><span class="serifLabel">Request</span></a>
+  
+  <a href="/cart" class="cartBtn"><img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sp-cart.svg?v=1627328819" alt="Cart"></a>
 </header>

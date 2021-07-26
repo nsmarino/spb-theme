@@ -1,0 +1,37 @@
+.pagesHeader {
+  display: flex;
+  border-bottom: 1px solid var(--main-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.pagesHeader > * {
+  margin: 1rem;
+}
+
+.pagesHeader .linkBtn {
+  border: 2px solid var(--main-color);
+  padding: 1rem;
+  border-radius: 23px;
+  text-align: center;
+}
+
+.pagesHeader .serifLabel, .pagesHeader .sansLabel {
+  display: block;
+}
+
+.pagesHeader .serifLabel {  
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--main-color);
+}
+
+.pagesHeader .sansLabel {
+  font-weight: bold;
+  font-family: var(--sans);
+  color: var(--main-color);
+}
+
+.pagesHeader .cartBtn img {
+  width: 150px;
+}

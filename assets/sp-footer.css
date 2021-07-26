@@ -1,0 +1,9 @@
+.index-footer {
+  display: flex;
+  border-top: 1px solid var(--main-color);
+}
+
+.index-footer .footSlogan {
+  color: var(--main-color);
+  flex: 0 0 30rem;
+}

@@ -1,0 +1,65 @@
+.index-landing {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.index-landing h1 {
+  text-align: center;
+  font-size: 6rem;
+  margin-top: 5rem;
+  padding: 0;
+  line-height: 1;
+  color: var(--main-color);
+  font-family: var(--sans);
+  text-transform: uppercase;
+}
+
+.index-landing h1 span {
+  font-family: var(--serif);
+  text-transform: initial;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.index-landing h1 .nyc {
+  font-style: normal;
+}
+
+.index-landing h1 .bookIllus {
+  width: 5rem;
+  margin-left: 1rem;
+}
+
+.index-landing .mainLanding {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.index-landing .mainIllus{
+  display: flex;
+  flex-direction: column;
+}
+
+.index-landing .mainLanding a {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.index-landing .mainLanding a .sansLabel {
+  display: block;
+  font-family: var(--sans);
+  font-weight: bold;
+  color: var(--main-color);
+}
+.index-landing .mainLanding a .serifLabel {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--main-color);
+}
+
+.index-landing footer {
+  display: flex;
+  justify-content: space-between;
+}

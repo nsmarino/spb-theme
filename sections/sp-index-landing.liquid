@@ -1,12 +1,18 @@
-<section>
-<h1>We’re a book store in NYC’slower east side that sells pickles and used books</h1>
-<div>
-  <a>Shop Merch</a>
-  <img src="" alt="">
-  <a>Shop Books</a>
+{{ 'sp-index-landing.css' | asset_url | stylesheet_tag }}
+
+<section class="index-landing">
+<h1>We’re a <span>book store</span> in <span class="nyc">NYC's</span> lower east side that sells <span>pickles</span> and used <span>books</span><img class="bookIllus" src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/book-illus.svg?v=1627331579" alt="small scribbly picture of a book"></h1>
+
+<div class="mainLanding">
+  <a><span class="sansLabel">Shop</span><span class="serifLabel">Merch</span></a>
+  <div class="mainIllus">
+    <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/main-jar.png?v=1627331579" alt="Jar of Pickles">
+    <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/shadow.png?v=1627331580" alt="shadow from jar of pickles">
+  </div>
+  <a><span class="sansLabel">Shop</span><span class="serifLabel">Books</span></a>
 </div>
 <footer>
-  <p>Sweet Pickle Books</p>
-  <p>Address</p>
+  <img src='https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455' alt="Sweet Pickle Books">
+  <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sp-address.svg?v=1627328811" alt="Address: 47 Orchard Street New York NY 10002">
 </footer>
 </section>

@@ -1,6 +1,7 @@
-<footer>
-  <hr>
-<p>We’re a book store  in the lower east side that sells pickles and used books</p>
+{{ 'sp-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="index-footer">
+  <p class="footSlogan">We’re a <span>book store</span> in <span class="nyc">NYC's</span> lower east side that sells <span>pickles</span> and used <span>books</span><img class="bookIllus" src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/book-illus.svg?v=1627331579" alt="small scribbly picture of a book"></p>
   {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
   <input type="hidden" name="contact[tags]" value="newsletter">
   <div class="newsletter-form__field-wrapper">

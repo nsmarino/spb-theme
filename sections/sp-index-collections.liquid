@@ -1,4 +1,6 @@
-<section>
+{{ 'sp-index-collections.css' | asset_url | stylesheet_tag }}
+
+<section class="index-collections">
   {%- render 'sp-collection-card', 
     title: collections['pickles'].title, 
     cardUrl: collections['pickles'].url, 
@@ -22,11 +24,11 @@
   {%- render 'sp-page-card', 
     title: 'Requests', 
     cardUrl: '/pages/contact', 
-    cardImage: 'https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455'
+    cardImage: 'https://cdn.shopify.com/s/files/1/0583/3202/0894/files/Screen_Shot_2021-07-06_at_10.58_1.png?v=1627332856'
   -%}
   {%- render 'sp-page-card', 
     title: 'Gift Card', 
     cardUrl: '/products/sweet-pickles-gift-card', 
-    cardImage: 'https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455'
+    cardImage: 'https://cdn.shopify.com/s/files/1/0583/3202/0894/files/Frame_9.png?v=1627332869'
   -%}
 </section>
