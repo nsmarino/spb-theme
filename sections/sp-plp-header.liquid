@@ -1,9 +1,9 @@
 <nav class="plp-header">
   <section>
-    <a href="{{ canonical_url }}/best-selling"><button>Popular</button></a>
-    <a href="{{ canonical_url }}/created-descending"><button>New Arrivals</button></a>
-    <a href="{{ canonical_url }}/price-ascending"><button>Price: Low to High</button></a>
-    <a href="{{ canonical_url }}/price-descending"><button>Price: High to Low</button></a>
+    <a href="{{ collection.url }}?sort_by=best-selling"><button>Popular</button></a>
+    <a href="{{ collection.url }}?sort_by=created-descending"><button>New Arrivals</button></a>
+    <a href="{{ collection.url }}?sort_by=price-ascending"><button>Price: Low to High</button></a>
+    <a href="{{ collection.url }}?sort_by=price-descending"><button>Price: High to Low</button></a>
   </section>
   <section>
     <a href="{{ shop.url }}/collections/all"><button>All</button></a>
