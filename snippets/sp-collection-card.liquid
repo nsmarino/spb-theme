@@ -1,0 +1,27 @@
+<a href="{{ cardUrl }}">
+  <div class="wrapper">
+      <img src="{{cardImage | image_url }}" alt="{{ title }}">
+      <p>{{ title }}</p>
+  </div>
+</a>
+  <style>
+    a {
+      text-decoration: none;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      width: 300px;
+      background-color: #F4F4F4;
+      border-radius: 23px;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      color: #018136;
+      font-family: serif;
+      text-decoration: none;
+    }
+  </style>

@@ -1,0 +1,32 @@
+<section>
+  {%- render 'sp-collection-card', 
+    title: collections['pickles'].title, 
+    cardUrl: collections['pickles'].url, 
+    cardImage: collections['pickles'].image
+  -%}
+  {%- render 'sp-collection-card', 
+    title: collections['books'].title, 
+    cardUrl: collections['books'].url, 
+    cardImage: collections['books'].image 
+  -%}
+  {%- render 'sp-collection-card', 
+    title: collections['rare'].title, 
+    cardUrl: collections['rare'].url, 
+    cardImage: collections['rare'].image 
+  -%}
+  {%- render 'sp-collection-card', 
+    title: collections['merch'].title, 
+    cardUrl: collections['merch'].url, 
+    cardImage: collections['merch'].image 
+  -%}
+  {%- render 'sp-page-card', 
+    title: 'Requests', 
+    cardUrl: '/pages/contact', 
+    cardImage: 'https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455'
+  -%}
+  {%- render 'sp-page-card', 
+    title: 'Gift Card', 
+    cardUrl: '/products/sweet-pickles-gift-card', 
+    cardImage: 'https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455'
+  -%}
+</section>
