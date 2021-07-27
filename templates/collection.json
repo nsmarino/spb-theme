@@ -1,5 +1,4 @@
 {
-  "layout": "shop",
   "sections": {
     "header": {
       "type": "sp-plp-header"

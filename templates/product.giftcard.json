@@ -1,5 +1,4 @@
 {
-  "layout": "shop",
   "sections": {
     "main": {
       "type": "sp-giftcard-product"

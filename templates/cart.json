@@ -1,5 +1,4 @@
 {
-  "layout": "shop",
   "sections": {
     "cart-items": {
       "type": "sp-cart-items"

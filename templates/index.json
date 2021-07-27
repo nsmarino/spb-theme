@@ -1,5 +1,4 @@
 {
-  "layout": "page",
   "sections": {
     "landing": {
       "type": "sp-index-landing"
