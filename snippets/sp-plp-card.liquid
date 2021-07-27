@@ -1,14 +1,23 @@
-<a href="{{ product.url }}">
+{{ 'sp-plp-card.css' | asset_url | stylesheet_tag }}
+
+<a href="{{ product.url }}" class="plp-card-link">
 <div class="wrapper">
+  <div class="plp-card-image-wrapper">
     <img src="{{ product.featured_media | image_url }}" alt="{{ product.title }}">
-    <p>{{ product.title }}</p>
-    <p>
-      {%- if product.metafields.custom_fields.subtitle -%}
-      {{ product.metafields.custom_fields.subtitle }}
-      {%- else -%}
-      Sweet Pickle Books
-      {%- endif -%}
-    </p>
-    <p>{{product.price | money }}</p>
+  </div>
+    <div class="plp-card-caption">
+      <div>
+      <p class="plp-card-title">{{ product.title }}</p>
+      <p class="plp-card-subtitle">
+        {%- if product.metafields.custom_fields.subtitle -%}
+        {{ product.metafields.custom_fields.subtitle }}
+        {%- else -%}
+        Sweet Pickle Books
+        {%- endif -%}
+      </p>        
+      </div>
+
+      <p class="plp-card-price">{{product.price | money_without_trailing_zeros }}</p>
+      </div>
 </div>
 </a>

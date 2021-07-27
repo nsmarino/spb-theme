@@ -1,0 +1,49 @@
+.plp-card-link {
+  text-decoration: none;
+  color: var(--main-color);
+}
+.wrapper {
+  height: 30em;
+  width: 35em;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.plp-card-image-wrapper {
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 23px;
+}
+.wrapper img {
+  height: 20em;
+}
+
+.wrapper .plp-card-caption {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .plp-card-caption p {
+  margin: 0;
+  padding: 0;  
+}
+
+.plp-card-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 150%;
+}
+.plp-card-subtitle {
+  font-family: var(--mono);
+  font-size: 80%;
+}
+
+.plp-card-price {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 150%;
+  font-weight: bold;
+}
+

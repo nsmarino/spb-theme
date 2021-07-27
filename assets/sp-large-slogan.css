@@ -1,0 +1,25 @@
+.sp-large-slogan {
+  text-align: center;
+  font-size: 6rem;
+  margin-top: 5rem;
+  padding: 0;
+  line-height: 1;
+  color: var(--main-color);
+  font-family: var(--sans);
+  text-transform: uppercase;
+}
+
+.sp-large-slogan span {
+  font-family: var(--serif);
+  text-transform: initial;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.sp-large-slogan .nyc {
+  font-style: normal;
+}
+.sp-large-slogan .bookIllus {
+  width: 5rem;
+  margin-left: 1rem;
+}
