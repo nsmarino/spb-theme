@@ -1,11 +1,14 @@
 {% comment %}theme-check-disable TemplateLength{% endcomment %}
-{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
+{{ 'sp-book-product.css' | asset_url | stylesheet_tag }}
 {{ 'component-badge.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
-<section class="page-width sp-product-page">
+<section class="sp-book-product">
   <div id="ProductInfo-{{ section.id }}" class="product__info-container">
     {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
@@ -14,11 +17,11 @@
     </h1>
 
     {%- if product.metafields.custom_fields.subtitle != blank -%}
-      <div>
+      <p class="subtitle">
         {{ product.metafields.custom_fields.subtitle }}
-      </div>
+      </p>
       {%- else -%}
-      <div>Sweet Pickle Books</div>
+      <p class="subtitle">Sweet Pickle Books</p>
     {%- endif -%}
 
     {%- if product.description != blank -%}
@@ -51,18 +54,16 @@
         </div>
       {%- endform -%}
     </product-form>
-
+    <ul>
+      <li>other info</li>
+      <li>for book product</li>
+      <li>such as number of pages</li>
+    </ul>
   </div>
   
-  <div>
+  <div class="sp-product-image-wrapper">
     <img src="{{ product.featured_media | image_url }}" alt="{{ product.title }}">
   </div>
 
   {%- render 'cart-notification' -%}
 </section>
-
-<style>
-  .sp-product-page {
-    display: flex;
-  }
-</style>

@@ -2,10 +2,10 @@
   "layout": "shop",
   "sections": {
     "cart-items": {
-      "type": "main-cart-items"
+      "type": "sp-cart-items"
     },
     "cart-footer": {
-      "type": "main-cart-footer",
+      "type": "sp-cart-footer",
       "blocks": {
         "subtotal": {
           "type": "subtotal"

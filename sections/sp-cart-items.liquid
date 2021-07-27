@@ -39,10 +39,6 @@
                   </td>
 
                   <td class="cart-item__details">
-                    {%- if section.settings.show_vendor -%}
-                      <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
-                    {%- endif -%}
-
                     <a href="{{ item.product.url }}" class="cart-item__name break">{{ item.product.title | escape }}</a>
 
                     {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
@@ -78,14 +74,6 @@
                       <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                     {%- endif -%}
 
-                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
-                      {%- for discount in item.discounts -%}
-                        <li class="discounts__discount">
-                          {%- render 'icon-discount' -%}
-                          {{ discount.title }}
-                        </li>
-                      {%- endfor -%}
-                    </ul>
 
                     <p class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}">
                       <span class="cart-item__error-text"></span>

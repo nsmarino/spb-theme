@@ -8,6 +8,7 @@ class ProductForm extends HTMLElement {
   }
 
   onSubmitHandler(evt) {
+    console.log(this.cartNotification)
     evt.preventDefault();
     this.cartNotification.setActiveElement(document.activeElement);
     
