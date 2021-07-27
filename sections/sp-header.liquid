@@ -1,7 +1,5 @@
-<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
-
-<noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
-
+<!-- <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'"> -->
+<!-- <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript> -->
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
@@ -12,13 +10,13 @@
 
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper">
   <header class="sp-header">
-    <a href="/"><img src='https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455' alt="Sweet Pickle Books"></a>
+    <a href="/" class="sp-header-logo"><img src='https://cdn.shopify.com/s/files/1/0583/3202/0894/files/Group_127logo.png?v=1627426236' alt="Sweet Pickle Books"></a>
     <a href="/pages/about">About</a>
     <a href="/collections/all">Shop</a>
     <a href="/pages/contact">Request a Book</a>
     <a href="/pages/pre-order">Pre-Order</a>
-    <a href="/blogs/news">blog</a>
-    <form action="{{ routes.search_url }}" method="get" role="search">
+    <a href="/blogs/news">Blog</a>
+    <form action="{{ routes.search_url }}" class="sp-header-search" method="get" role="search">
       <div class="field">
         <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.search' | t }}">
         <input type="hidden" name="options[prefix]" value="last">
@@ -28,24 +26,10 @@
           </svg>
         </button>
       </div>
-    </form>  
+    </form> 
       <!-- Cart icon -->
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset" id="cart-icon-bubble">
-        {%- liquid
-          if cart == empty
-            render 'icon-cart-empty'
-          else
-            render 'icon-cart'
-          endif
-        -%}
-        {%- if cart != empty -%}
-          <div class="cart-count-bubble">
-            {%- if cart.item_count < 100 -%}
-              <span aria-hidden="true">{{ cart.item_count }}</span>
-            {%- endif -%}
-            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-          </div>
-        {%- endif -%}
+      <a href="{{ routes.cart_url }}" class="sp-cart-icon">
+        <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sp-cart-icon.svg?v=1627427016" alt="cart">
       </a>
     </div>
   </header>
@@ -55,17 +39,73 @@
   .sp-header {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid var(--main-color);
+    padding: 1rem;
+  }
+  .sp-header-logo {
+    width: 250px;
+    display: flex;
+    align-items: center;
+  }
+  .sp-header a img {
+    width: 100%;
   }
   .sp-header a {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
     font-size: var(--font-size-m);
+    font-style: italic;
+    color: var(--main-color);
   }
-  
+  .sp-cart-icon {
+    width: 50px;
+  }
+  .sp-header-search {
+    width: 200px;
+    height: 50px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+  }
+  .sp-header-search .field {
+    width: 100%;
+    display: flex;
+    border: none;
+    height: 100%;
+    background-color: none;
+  }
+  ::placeholder {
+  color: var(--main-color);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--font-size-m);
+  } 
+  .sp-header-search .field input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: var(--main-color);
+    background-color: none;
+    border-radius: 10px;
+    padding-left: 10px;
+  }
+  .sp-header-search .field button {
+    width: 20%;
+    height: 100%;
+    border: none;
+    background-color: none;
+    background: none;
+    border-radius: 10px;
+  }
+  .sp-header-search .field svg {
+    width: 25px;
+    height: 100%;
+    color: var(--main-color);
+  }
 </style>
 
 {%- if request.page_type != 'cart' -%}
-  {%- render 'cart-notification' -%}
+  <!-- {%- render 'cart-notification' -%} -->
 {%- endif -%}
 
 {% javascript %}

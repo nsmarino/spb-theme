@@ -1,3 +1,28 @@
-{{ 'sp-large-slogan.css' | asset_url | stylesheet_tag }}
 <h1 class="sp-large-slogan">We’re a <span>book store</span> in <span class="nyc">NYC's</span> lower east side that sells <span>pickles</span> and used <span>books</span><img class="bookIllus" src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/book-illus.svg?v=1627331579" alt="small scribbly picture of a book"></h1>
+<style>
+.sp-large-slogan {
+  text-align: center;
+  font-size: var(--font-size-l);
+  margin-top: 5rem;
+  padding: 0;
+  line-height: 1;
+  color: var(--main-color);
+  font-family: var(--sans);
+  text-transform: uppercase;
+}
 
+.sp-large-slogan span {
+  font-family: var(--serif);
+  text-transform: initial;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.sp-large-slogan .nyc {
+  font-style: normal;
+}
+.sp-large-slogan .bookIllus {
+  width: 5rem;
+  margin-left: 1rem;
+}
+</style>
