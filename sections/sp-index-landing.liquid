@@ -1,17 +1,70 @@
-{{ 'sp-index-landing.css' | asset_url | stylesheet_tag }}
-
 <section class="index-landing">
 {%- render 'sp-large-slogan' -%}
-<div class="mainLanding">
-  <a><span class="sansLabel">Shop</span><span class="serifLabel">Merch</span></a>
-  <div class="mainIllus">
-    <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/main-jar.png?v=1627331579" alt="Jar of Pickles">
-    <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/shadow.png?v=1627331580" alt="shadow from jar of pickles">
+
+  <div class="mainLanding">
+
+    <a class="mixedFontLink merchLink">
+      <span class="sans">Shop</span>
+      <span class="serif">Merch</span>
+    </a>
+    
+    <div class="mainIllus">
+      <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/main-jar.png?v=1627331579" alt="Jar of Pickles">
+      <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/shadow.png?v=1627331580" alt="shadow from jar of pickles">
+    </div>
+
+    <a class="mixedFontLink shopLink">
+      <span class="sans">Shop</span>
+      <span class="serif">Books</span>
+    </a>
+
+    <img class="landingFooterLogo" src='https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455' alt="Sweet Pickle Books">
+    <img class="landingFooterAddress" src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sp-address.svg?v=1627328811" alt="Address: 47 Orchard Street New York NY 10002">
+
   </div>
-  <a><span class="sansLabel">Shop</span><span class="serifLabel">Books</span></a>
-</div>
-<footer>
-  <img src='https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sweetpickle-logo.svg?v=1626804455' alt="Sweet Pickle Books">
-  <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/sp-address.svg?v=1627328811" alt="Address: 47 Orchard Street New York NY 10002">
-</footer>
+
 </section>
+<style>
+  .mainLanding {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr max-content;
+  }
+  .mainIllus {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .mixedFontLink {
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+  }
+  .mixedFontLink .sans {
+    display: block;
+    font-family: var(--sans);
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: var(--font-size-l);
+    line-height: 1;
+  }
+  .mixedFontLink .serif {
+    display: block;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--main-color);
+    font-size: var(--font-size-l);
+    line-height: 1;
+  }
+
+  .landingFooterLogo, .landingFooterAddress {
+    justify-self: center;
+    align-self: center;
+    width: 25rem;
+    padding: 2rem;
+  }
+
+
+</style>

@@ -1,5 +1,3 @@
-{{ 'sp-plp-card.css' | asset_url | stylesheet_tag }}
-
 <a href="{{ product.url }}" class="plp-card-link">
 <div class="wrapper">
   <div class="plp-card-image-wrapper">
@@ -21,3 +19,59 @@
       </div>
 </div>
 </a>
+<style>
+.plp-card-link {
+  text-decoration: none;
+  display: block;
+  color: var(--main-color);
+  width: calc((100vw / 3) - 2rem);
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.plp-card-image-wrapper {
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 23px;
+}
+.wrapper img {
+  height: 18em;
+}
+
+.wrapper .plp-card-caption {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .plp-card-caption p {
+  margin: 0;
+  padding: 0;  
+}
+
+.plp-card-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 150%;
+}
+.plp-card-subtitle {
+  font-family: var(--mono);
+  font-size: 80%;
+  line-height: .6;
+}
+
+.plp-card-price {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+</style>

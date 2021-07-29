@@ -1,4 +1,4 @@
-{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+<!-- {{ 'section-contact-form.css' | asset_url | stylesheet_tag }} -->
 
 <div class="contact page-width page-width--narrow spaced-section">
   {%- form 'contact', id: 'ContactForm' -%}
@@ -16,7 +16,7 @@
         </li>
       </ul>
     {%- endif -%}
-    <div class="contact__fields">
+    <!-- <div class="contact__fields">
       <div class="field">
         <input class="field__input" autocomplete="name" type="text" id="ContactForm-name" name="contact[{{ 'templates.contact.form.name' | t }}]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'templates.contact.form.name' | t }}">
         <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
@@ -62,15 +62,75 @@
         {{- form.body -}}
       </textarea>
       <label class="form__label field__label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
+    </div> -->
+
+    <div class="field">      <label class="field__label" for="ContactForm-phone">Your Email*</label>
+
+      <input type="email" class="field__input" autocomplete="email" name="contact" value="" placeholder="Your Answer">
     </div>
+
+    <div class="field">   <label class="field__label">
+        What book(s) can we help you find?*
+        <span>Please put any helpful information here: author, title, edition, format, etc.</span>
+      </label>
+      <input type="text" class="field__input" name="contact" value="" placeholder="Your Answer">
+   
+    </div>
+    <div class="field"><label class="field__label">
+What is your budget?
+      </label>
+      <input type="text" class="field__input" name="contact" value="" placeholder="Your Answer">
+      
+    </div>
+    <div class="field">      <label class="field__label">
+If you chose SHIP, please provide your mailing address:*      </label>
+
+      <input type="text" class="field__input" name="contact" value="" placeholder="Your Answer">
+    </div>
+    <div class="field">
+      <label class="field__label">Name *</label> 
+      <input type="text" class="field__input" name="contact" value="" placeholder="Your Answer">   
+    </div>
+    <div class="field">      
+      <label class="field__label">Phone Number *</label> 
+      <input type="text" class="field__input" name="contact" value="" placeholder="Your Answer">
+    </div>
+    <div class="field">      
+      <label class="field__label">Questions & Comments</label> 
+      <input type="text" class="field__input" name="contact" value="" placeholder="Your Answer">
+    </div>
+
     <div class="contact__button">
-      <button type="submit" class="button">
-        {{ 'templates.contact.form.send' | t }}
-      </button>
+      <button type="submit" class="button">Submit Form</button>
     </div>
   {%- endform -%}
 </div>
-
+<style>
+::placeholder {
+  text-transform: uppercase;
+  font-family: var(--mono);
+  color: #C4C4C4;
+  font-style: normal;
+}
+#ContactForm {
+  margin: 5rem;
+}
+#ContactForm label {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--main-color);
+  font-size: var(--font-size-l);
+  display: block
+}
+#ContactForm label span {
+  font-family: var(--mono);
+  font-style: normal;
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-size: 16px;
+  display: block
+}
+</style>
 {% schema %}
 {
   "name": "t:sections.contact-form.name",

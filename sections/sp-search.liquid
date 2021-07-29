@@ -1,58 +1,9 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
-
-<link rel="stylesheet" href="{{ 'component-badge.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
-
-<noscript>{{ 'component-badge.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
-
-<style>
-  .template-search__search {
-    margin: 0 auto;
-    max-width: 29.5rem;
-  }
-
-  .template-search__search .search {
-    margin-top: 3rem;
-  }
-
-  .template-search__results {
-    margin-top: 6rem;
-  }
-
-  .template-search--empty {
-    padding-bottom: 18rem;
-  }
-
-  .template-search .grid__item--small {
-    padding-bottom: 0.5rem;
-  }
-
-  @media screen and (min-width: 750px) {
-    .template-search__search {
-      max-width: 47.8rem;
-    }
-
-    .template-search .grid__item--small {
-      padding-bottom: 1rem;
-    }
-  }
-
-  .search__button .icon {
-    height: 1.8rem;
-  }
-</style>
-
 <div class="template-search spaced-section{% unless search.performed and search.results.size > 0 %} template-search--empty{% endunless %}">
   <div class="page-width center">
     {%- if search.performed -%}
       <h1 class="h2">{{ 'templates.search.title' | t }}</h1>
-    {%- else -%}
-      <h1 class="h2">{{ 'general.search.search' | t }}</h1>
     {%- endif -%}
-    <div class="template-search__search">
+    <!-- <div class="template-search__search">
       <form action="{{ routes.search_url }}" method="get" role="search" class="search">
         <div class="field">
           <input
@@ -73,11 +24,11 @@
           </button>
         </div>
       </form>
-    </div>
+    </div> -->
     {%- if search.performed -%}
       <p class="element-margin" role="status">
         {%- if search.results_count == 0 -%}
-          {{ 'templates.search.no_results' | t: terms: search.terms }}
+          No results...Would you like to request a book?
         {%- else -%}
           {{ 'templates.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
         {%- endif -%}

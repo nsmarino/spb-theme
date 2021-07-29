@@ -1,37 +1,30 @@
-{% comment %}theme-check-disable TemplateLength{% endcomment %}
-{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-{{ 'component-badge.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
-<section class="page-width sp-product-page">
-  <div id="ProductInfo-{{ section.id }}" class="product__info-container">
+<section class="sp-product-page">
+  <div id="ProductInfo-{{ section.id }}" class="sp-product-info">
     {%- assign product_form_id = 'product-form-' | append: section.id -%}
-
+<div class="main-product-info">
     <h1 class="product__title">
       {{ product.title | escape }}
     </h1>
 
     {%- if product.metafields.custom_fields.subtitle != blank -%}
-      <div>
+      <p class="product__subtitle">
         {{ product.metafields.custom_fields.subtitle }}
-      </div>
+      </p>
       {%- else -%}
-      <div>Sweet Pickle Books</div>
+      <p class="product__subtitle">Sweet Pickle Books</p>
     {%- endif -%}
 
-    {%- if product.description != blank -%}
-      <div>
-        {{ product.description }}
-      </div>
-    {%- endif -%}
-
+    {% if product.description != blank %}
+    <div class="product__description">{{ product.description }}</div>
+    {% endif %}
+    
     <!-- Variants -->
-    <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+    <variant-radios class="no-js-hidden size-variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
       {%- for option in product.options_with_values -%}
           <fieldset class="js product-form__input">
-            <legend class="form__label">{{ option.name }}</legend>
+            <!-- <legend class="form__label">{{ option.name }}</legend> -->
             {%- for value in option.values -%}
               <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
                     name="{{ option.name }}"
@@ -52,14 +45,11 @@
 
     <!-- Quantity -->
     <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
-      <label class="form__label" for="Quantity-{{ section.id }}">
+      <label class="form__label quantity-label" for="Quantity-{{ section.id }}">
         Quantity
       </label>
       <quantity-input class="quantity">
-        <button class="quantity__button no-js-hidden" name="minus" type="button">
-          <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
-          {% render 'icon-minus' %}
-        </button>
+        <button class="quantity__button no-js-hidden" name="minus" type="button">-</button>
         <input class="quantity__input"
             type="number"
             name="quantity"
@@ -68,16 +58,13 @@
             value="1"
             form="product-form-{{ section.id }}"
           >
-        <button class="quantity__button no-js-hidden" name="plus" type="button">
-          <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
-          {% render 'icon-plus' %}
-        </button>
+        <button class="quantity__button no-js-hidden" name="plus" type="button">+</button>
       </quantity-input>
     </div>
 
-    <div class="no-js-hidden" id="price-{{ section.id }}">
+    <!-- <div class="no-js-hidden" id="price-{{ section.id }}">
       {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
-    </div>
+    </div> -->
 
     <product-form class="product-form">
       {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
@@ -99,7 +86,7 @@
         </div>
       {%- endform -%}
     </product-form>
-
+  </div>
     <ul>
       <li>other info</li>
       <li>for merch product</li>
@@ -107,15 +94,127 @@
     </ul>
   </div>
   
-  <div>
+  <div class="sp-product-image-wrapper">
     <img src="{{ product.featured_media | image_url }}" alt="{{ product.title }}">
   </div>
 
   {%- render 'cart-notification' -%}
+
 </section>
 
 <style>
   .sp-product-page {
     display: flex;
+    border-bottom: 1px solid var(--main-color);
+
   }
+  .sp-product-info {
+    flex-basis: 50%;
+    border-right: 1px solid var(--main-color);
+  }
+
+  .main-product-info {
+    padding: 4rem;
+  }
+  .product__title {
+    color: var(--main-color); 
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: normal;
+    font-size: var(--font-size-l);
+    margin: 0;
+    line-height: 1.2;
+  }
+  .product__subtitle {
+    color: var(--main-color); 
+    font-family: var(--sans);
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: var(--font-size-s);
+    margin: 0;
+    margin-left: 2rem;
+  }
+  .product__description, .quantity-label {
+    color: var(--main-color); 
+    font-family: var(--mono);
+    font-weight: normal;
+    font-size: var(--font-size-s);
+    margin-left: 2rem;
+  }
+
+  .sp-product-image-wrapper {
+    background-color: var(--bg);
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  fieldset {
+    display: flex;
+    border: none;
+  }
+
+.size-variants input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.size-variants label {
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-right: 1rem;
+  display: block;
+  text-align: center;
+  width: 4rem;
+}
+.size-variants input[type="radio"]:checked + label {
+  background-color:var(--main-color);
+  color:var(--base-color);
+}
+.size-variants input[type="radio"]:focus + label {
+    border: 2px dashed #444;
+}
+.quantity__button {
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  background-color:var(--base-color);
+  border-radius: 4px;
+  margin-right: 1rem;
+  text-align: center;
+  width: 2rem;
+}
+.quantity__input {
+  width: 3rem;
+  border: none;
+  color: var(--main-color);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  border-top: 1px solid var(--main-color);
+  color: var(--main-color); 
+  font-family: var(--mono);
+  font-weight: normal;
+  font-size: var(--font-size-s);
+  padding-left: 4rem;
+}
+.product-form__submit {
+  border: none;
+  background: var(--main-color);
+  font-family: var(--mono);
+  font-size: var(--font-size-m);
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 1rem 5rem;
+  margin: 1rem;
+}
+
 </style>

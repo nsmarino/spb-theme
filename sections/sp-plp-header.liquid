@@ -1,28 +1,91 @@
 <nav class="plp-header">
-  <section>
-    <a href="{{ collection.url }}?sort_by=best-selling"><button>Popular</button></a>
-    <a href="{{ collection.url }}?sort_by=created-descending"><button>New Arrivals</button></a>
-    <a href="{{ collection.url }}?sort_by=price-ascending"><button>Price: Low to High</button></a>
-    <a href="{{ collection.url }}?sort_by=price-descending"><button>Price: High to Low</button></a>
+  <section class="sort-by">
+    <p>Sort by:</p>
+    <div class="sort-btn-wrapper">
+      <a id="first-sort" href="{{ collection.url }}?sort_by=best-selling">Popular</a>
+      <a href="{{ collection.url }}?sort_by=created-descending">New Arrivals</a>
+      <a href="{{ collection.url }}?sort_by=price-ascending">Price: Low to High</a>
+      <a id="last-sort" href="{{ collection.url }}?sort_by=price-descending">Price: High to Low</a>
+    </div>
   </section>
-  <section>
-    <a href="{{ shop.url }}/collections/all"><button>All</button></a>
-    <a href="{{ shop.url }}/collections/used"><button>Used Books</button></a>
-    <a href="{{ shop.url }}/collections/rare"><button>Rare Books</button></a>
-    <a href="{{ shop.url }}/collections/merch"><button>Merch</button></a>
-    <a href="{{ shop.url }}/collections/pickles"><button>Pickles</button></a>
+  {% capture custom_url %}{{ shop.url}}{{ page.url }}{% endcapture %}
+  {%- capture current_collection -%}{{ canonical_url  | remove: custom_url | remove: 'collections' | remove: '/' }}{%- endcapture -%}
+  <section class="collection-type">
+    <a id="{%- if current_collection == "all" -%}currentUrl{%- endif -%}" href="{{ shop.url }}/collections/all">All</a>
+    <a id="{%- if current_collection == "used" -%}currentUrl{%- endif -%}" href="{{ shop.url }}/collections/used">Used Books</a>
+    <a id="{%- if current_collection == "rare" -%}currentUrl{%- endif -%}" href="{{ shop.url }}/collections/rare">Rare Books</a>
+    <a id="{%- if current_collection == "merch" -%}currentUrl{%- endif -%}" href="{{ shop.url }}/collections/merch">Merch</a>
+    <a id="{%- if current_collection == "pickles" -%}currentUrl{%- endif -%}" href="{{ shop.url }}/collections/pickles">Pickles</a>
   </section>
 </nav>
 <style>
   .plp-header {
-    text-align: center;
+    text-align: left;
+    margin-left: 3rem;
   }
-  .plp-header button {
+
+  .plp-header .sort-by {
+    display: flex;
+    align-items: center;
+  }
+  .plp-header .sort-by p {
     color: #069648;
     font-family: monospace;
+    font-size: var(--font-size-s);
+    width: 15rem;
+    text-align: center;
+    margin-right: 0.75rem;
+  }
+
+  .plp-header .sort-btn-wrapper {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: none;
+    border-radius: 10px;
+    display: flex;
+
+  }
+
+  .plp-header .sort-by .sort-btn-wrapper a {
+    color: #069648;
+    font-family: monospace;
+    font-size: var(--font-size-s);
+    border: none;
+    background-color: var(--bg);
+    cursor: pointer;
+    padding: 0.25rem 2rem;
+    border-right: 1px solid black;
+  } 
+  #first-sort {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  #last-sort {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: none;
+  }
+
+  .plp-header .collection-type {
+    display: flex;
+  }
+  .plp-header .collection-type a {
+    color: #069648;
+    font-family: monospace;
+    font-size: var(--font-size-s);
     border-radius: 10px;
     border: none;
+    background-color: var(--bg);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    padding: 0.75rem 0rem;
+    display: block;
+    text-align: center;
+    width: 15rem;
+    margin-right: 0.75rem;
   } 
+
+  #currentUrl {
+    background-color: var(--main-color);
+    color: var(--bg);
+  }
 </style>

@@ -5,11 +5,25 @@
   --mono: monospace;
   
   --main-color: #018136;
+
   --bg: #F4F4F4;
+  --bg-variant: #FFFFF8;
+  --base-color: #FBFCFA; 
 
+  --font-size-s: 100%;
   --font-size-m: 125%;
-  --font-size-l: 500%;
+  --font-size-l: 300%;
+  --font-size-xl: 500%;
+ 
+}
 
+body {
+  background-color: var(--base-color);
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
 }
 
 /* Hidden elements */

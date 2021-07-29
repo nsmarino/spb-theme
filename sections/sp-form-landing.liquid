@@ -1,12 +1,79 @@
-{%- render 'sp-large-slogan' -%}
-<div>
-<button>Sweet Pickle Book Request Form</button>
-<img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/Screen_Shot_2021-07-06_at_10.58_1.png?v=1627332856" alt="">
-<button>Request a curated collection</button>
-</div>
-<p>Hi! Thanks for trusting Sweet Pickle Books to help find what you're looking for. After you fill out this request, we will contact you directly with details before the order is completed. We'll do our best to get this to you asap. Thanks for your patience! Let the hunt begin! 
-</p>
-<button>Book Request Form</button>
-<button>Curated Collection Form</button>
+<section class="sp-form-landing">
+  {%- render 'sp-large-slogan' -%}
+
+  <div class="foreground">
+    <a>Sweet Pickle <br /><span>book request</span><br />Form.</a>
+    <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/order-form.png?v=1627569070" alt="order form">
+    <a>Request a <br /><span>curated</span><br />collection</a>
+  </div>
+
+
+
+</section>
+  <div class="sp-form-landing-instructions">
+    <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/paperclip.svg?v=1627568636" alt="paperclip">
+    <p>Hi! Thanks for trusting Sweet Pickle Books to help find what you're looking for. After you fill out this request, we will contact you directly with details before the order is completed. We'll do our best to get this to you asap. Thanks for your patience! Let the hunt begin!</p>
+    <img src="https://cdn.shopify.com/s/files/1/0583/3202/0894/files/paperclip.svg?v=1627568636" alt="paperclip">
+  </div>
+<nav class="sp-form-nav">
+  <a>Book Request Form</a>
+  <a>Curated Collection Form</a>
+</nav>
+<style>
+  .sp-form-landing {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .sp-form-landing .sp-large-slogan {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .sp-form-landing .foreground {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15rem;
+  }
+  .sp-form-landing .foreground a {
+    font-family: var(--sans);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: var(--font-size-l);
+    line-height: 1;
+    text-align: center;
+  }
+  .sp-form-landing .foreground a span {
+    font-family: var(--serif);
+    text-transform: lowercase;
+    font-weight: normal;
+    font-style: italic;
+  }
+  .sp-form-landing-instructions {
+    display: flex;
+    justify-content: center;
+  }
+  .sp-form-landing-instructions p {
+    font-family: var(--mono);
+    text-align: center;
+    padding: 5rem;
+    font-size: var(--font-size-m);
+    color: var(--main-color);
+  }
+
+  .sp-form-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  .sp-form-nav a {
+    background-color: var(--main-color);
+    color: var(--base-color);
+    padding: .5rem 3rem;
+    border-radius: 10px;
+    font-family: var(--mono);
+  }
+</style>
 
 

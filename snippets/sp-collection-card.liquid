@@ -1,6 +1,10 @@
 <a href="{{ cardUrl }}" class="index-card">
-  <div>
-      <img src="{{cardImage | image_url }}" alt="{{ title }}">
+  <div class="card-wrapper">
+
+    <div class="image-wrapper">
+      <img src="{{ cardImage | image_url }}" alt="{{ title }}">
+    </div>
+
       <p>{{ title }}</p>
   </div>
 </a>
